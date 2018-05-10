@@ -1,18 +1,20 @@
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    $scope.cars = [
-        {model : "GFDL", color : "red"},
-        {model : "HGEM (extreme case)", color : "white"},
-        {model : "IPSL", color : "black"},
-        {model : "MIRO", color : "black"}
-    ];
-    $scope.selectedCar = $scope.cars[2];
-});
-                                              
-                                              
+                                         
+ function myFunction() {
+    var x = document.getElementById("cc").value;
+    if (x == "MIRO")
+      document.getElementById("tableau").innerHTML = "Here is the MIRO: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
+    else if (x == "IPSL")
+      document.getElementById("tableau").innerHTML = "Here is the IPSL: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
+    else if (x == "GFDL")
+      document.getElementById("tableau").innerHTML = "Here is the GFDL: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
+    else if (x == "HGEM")
+      document.getElementById("tableau").innerHTML = "Here is the HGEM: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
+    else
+      document.getElementById("tableau").innerHTML = "Here is the results: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
+        
+ }
 </script>
 <body>
 
@@ -20,27 +22,33 @@ app.controller('myCtrl', function($scope) {
 <tr >
     <td width="25%">
         <label> Population growth </label>
-        <select >
+        <select id="population" onchange="loadTableau()" >
             <option>Social economic pathway (SSP2) </option>
         </select>
     </td>    
     <td width="25%">
          <label> GDP </label>
-       <select >
+       <select id="gdp" onchange="loadTableau()" >
         <option>Social economic pathway (SSP2) </option>
         </select>
     </td>    
     <td width="25%">
    <div ng-app="myApp" ng-controller="myCtrl">
          <label> Climate change </label>
-       <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        <select id="cc" onchange="loadTableau()" >
+        <option>MIRO</option>
+        <option>IPSL</option>
+        <option>GFDL</option>
+        <option>HGEM</option>
+            
         </select>
     <h1>You selected the option of climate change = {{selectedCar.model}}.</h1>
     </div>
     </td>    
     <td width="25%">
          <label> Technology change </label>
-       <select >
+        <select id="tc" onchange="loadTableau()" ></option>
+
         <option>Not available</option>
         </select>
     </td>    
@@ -51,37 +59,10 @@ app.controller('myCtrl', function($scope) {
     
 
 
-<div align="center">
-<div ng-if="selectedCar == "HGEM (extreme case)">
+<div id="tableau" align="center">
 
-<div class='tableauPlaceholder' id='viz1525960558791' style='position: relative'><noscript><a href='#'>
-    <img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ba&#47;baseline&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
-    <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-        <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-        <param name='name' value='baseline&#47;Dashboard1' /><param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ba&#47;baseline&#47;Dashboard1&#47;1.png' />
-        <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                
-    
-    <script type='text/javascript'>                    
-        var divElement = document.getElementById('viz1525960558791');                    
-        var vizElement = divElement.getElementsByTagName('object')[0];                    
-        vizElement.style.width='1330px';vizElement.style.height='887px';                    
-        var scriptElement = document.createElement('script');                    
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-</div>
 </div> 
-                                                
-                                                
-<div ng-if="selectedCar == "GFDL">
 
-    <h1> test </h1>
-</div>
-</div>
-</div> 
 
 
 <p>When you use the ng-options directive to create dropdown lists, the selected value can be an object.</p>
