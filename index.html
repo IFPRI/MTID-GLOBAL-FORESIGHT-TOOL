@@ -4,13 +4,13 @@
  function myFunction() 
     {
     var x = document.getElementById("cc").value;
-    if (x == "MIRO")
+    if (x === "MIRO")
       document.getElementById("tableau").innerHTML = "Here is the MIRO: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
-    else if (x == "IPSL")
+    else if (x === "IPSL")
       document.getElementById("tableau").innerHTML = "Here is the IPSL: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
-    else if (x == "GFDL")
+    else if (x === "GFDL")
       document.getElementById("tableau").innerHTML = "Here is the GFDL: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
-    else if (x == "HGEM")
+    else if (x === "HGEM")
       document.getElementById("tableau").innerHTML = "Here is the HGEM: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
     else
       document.getElementById("tableau").innerHTML = "Here is the results: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' height='600'></iframe>";
