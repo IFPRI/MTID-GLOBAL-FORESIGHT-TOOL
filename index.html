@@ -15,13 +15,13 @@
     var output = "";
     output += " You were selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", Technology change = "+ tc+". See the simulation results including Population at risk of hunger, Production, and Yield.";    
     console.log("output:"+output);
-    if (x === "MIRO")
+    if (cc === "MIRO")
       document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
-    else if (x === "IPSL")
+    else if (cc === "IPSL")
       document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
-    else if (x === "GFDL")
+    else if (cc === "GFDL")
       document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
-    else if (x === "HGEM")
+    else if (cc === "HGEM")
       document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactive/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
     else
        document.getElementById("tableau").innerHTML =output+ "<iframe src='https://public.tableau.com/views/interactive/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
