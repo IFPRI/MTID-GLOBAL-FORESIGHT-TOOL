@@ -1,5 +1,18 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.cars = [
+        {model : "GFDL", color : "red"},
+        {model : "HGEM", color : "white"},
+        {model : "IPSL", color : "black"},
+        {model : "MIRO", color : "black"}
+    ];
+});
+                                              
+                                              
+</script>
 <body>
 <div ng-app="myApp" ng-controller="myCtrl">
 <table width="100%">
@@ -10,7 +23,7 @@
         </select>
     </td>    
     <td width="25%">
-        <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        <select >
         <option>Social economic pathway (SSP2) </option>
         </select>
     </td>    
@@ -20,7 +33,7 @@
         </select>
     </td>    
     <td width="25%">
-        <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        <select >
         <option>Not available</option>
         </select>
     </td>    
@@ -61,19 +74,7 @@
 
 </div>
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    $scope.cars = [
-        {model : "GFDL", color : "red"},
-        {model : "HGEM", color : "white"},
-        {model : "IPSL", color : "black"}
-        {model : "MIRO", color : "black"}
-    ];
-});
-                                              
-                                              
-</script>
+
 
 <p>When you use the ng-options directive to create dropdown lists, the selected value can be an object.</p>
 <p>In this example you can display both the model and the color of the selected element.</p>
