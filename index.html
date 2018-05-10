@@ -2,14 +2,40 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
 
+<table>
+<tr>
+    <td>
+        <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        
+        </select>
+    </td>    
+    <td>
+        <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        
+        </select>
+    </td>    
+    <td>
+        <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        
+        </select>
+    </td>    
+    <td>
+        <select ng-model="selectedCar" ng-options="x.model for x in cars">
+        
+        </select>
+    </td>    
+</tr>
+</table>    
 <div ng-app="myApp" ng-controller="myCtrl">
 
-<p>Select a car:</p>
+<p>Population Growth:</p>
 
 <select ng-model="selectedCar" ng-options="x.model for x in cars">
 </select>
-
+    
 <h1>You selected: {{selectedCar.model}}</h1>
+
+<span ng-if="
 <div align="center">
 <div class='tableauPlaceholder' id='viz1525960558791' style='position: relative'><noscript><a href='#'>
     <img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ba&#47;baseline&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
