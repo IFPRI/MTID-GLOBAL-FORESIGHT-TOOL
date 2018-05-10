@@ -8,18 +8,23 @@
                                          
  function loadTableau() 
     {
-    var x = document.getElementById("cc").value;
+    var cc = document.getElementById("cc").value;
+    var population = document.getElementById("population").value;
+    var gdp = document.getElementById("gdp").value;
+    var tc = document.getElementById("tc").value;
+    
+    document.getElementById("tableau").innerHTML = " You were selected Population growth = "+ population+", GDP = "+gpd+", Climate change = "+ cc+ ", Technology change = "+ tc+". See the simulation results including Population at risk of hunger, Production, and Yield.";    
     console.log("x:"+x);
     if (x === "MIRO")
-      document.getElementById("tableau").innerHTML = "Here is the MIRO: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
     else if (x === "IPSL")
-      document.getElementById("tableau").innerHTML = "Here is the IPSL: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
     else if (x === "GFDL")
-      document.getElementById("tableau").innerHTML = "Here is the GFDL: " + "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
     else if (x === "HGEM")
-      document.getElementById("tableau").innerHTML = "Here is the HGEM: " + "<iframe src='https://public.tableau.com/views/interactive/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = "<iframe src='https://public.tableau.com/views/interactive/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
     else
-       document.getElementById("tableau").innerHTML = "Here is the else: " + "<iframe src='https://public.tableau.com/views/interactive/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
+       document.getElementById("tableau").innerHTML = "<iframe src='https://public.tableau.com/views/interactive/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
        
     }
 </script>    
