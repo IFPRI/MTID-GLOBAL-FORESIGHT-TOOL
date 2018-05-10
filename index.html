@@ -15,7 +15,7 @@ app.controller('myCtrl', function($scope) {
                                               
 </script>
 <body>
-
+<div ng-app="myApp" ng-controller="myCtrl">
 <table width="100%">
 <tr >
     <td width="25%">
@@ -31,11 +31,11 @@ app.controller('myCtrl', function($scope) {
         </select>
     </td>    
     <td width="25%">
-        <div ng-app="myApp" ng-controller="myCtrl">
+
          <label> Climate change </label>
        <select ng-model="selectedCar" ng-options="x.model for x in cars">
         </select>
-        </div>     
+    
     </td>    
     <td width="25%">
          <label> Technology change </label>
@@ -80,7 +80,7 @@ app.controller('myCtrl', function($scope) {
     <h1> test </h1>
 </div>
 </div>
-
+</div> 
 
 
 <p>When you use the ng-options directive to create dropdown lists, the selected value can be an object.</p>
