@@ -1,7 +1,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
-
+<div ng-app="myApp" ng-controller="myCtrl">
 <table width="100%">
 <tr >
     <td width="25%">
@@ -26,7 +26,7 @@
     </td>    
 </tr>
 </table>    
-<div ng-app="myApp" ng-controller="myCtrl">
+
 
 <p>Population Growth:</p>
 
@@ -65,9 +65,10 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     $scope.cars = [
-        {model : "Ford Mustang", color : "red"},
-        {model : "Fiat 500", color : "white"},
-        {model : "Volvo XC90", color : "black"}
+        {model : "GFDL", color : "red"},
+        {model : "HGEM", color : "white"},
+        {model : "IPSL", color : "black"}
+        {model : "MIRO", color : "black"}
     ];
 });
                                               
