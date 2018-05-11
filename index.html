@@ -16,11 +16,11 @@
     output += " You were selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", Technology change = "+ tc+". See the simulation results including Population at risk of hunger, Production, and Yield.";    
     console.log("output:"+output);
     if (cc === "MIRO")
-      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
     else if (cc === "IPSL")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/IPSL?:embed=true&:showVizHome=no' width='100%' height='600'></iframe>";
     else if (cc === "GFDL")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/baseline/Dashboard1?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/GFDL?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
     else if (cc === "HGEM")
       document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%' height='600'></iframe>";
     else
@@ -66,6 +66,8 @@
 <tr width="100%">
 <td colspan="4">
 <div id="tableau" align="center">
+This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM (extreme case), Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield.    
+        
 <iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no"  width='100%' height='800'></iframe>";
 </div>
     </td>
