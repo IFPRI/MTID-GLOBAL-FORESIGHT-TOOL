@@ -13,7 +13,7 @@
     var gdp = document.getElementById("gdp").value;
     var tc = document.getElementById("tc").value;
     var output = "";
-    output += "<p align='center'> <h1>You selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", and Technology change = "+ tc+". See the simulation results (population at risk of hunger, Production, and Yield) based on given assumptions, comparing to the baseline (SSP2-NoCC).</h1></p>";    
+    output += "<p align='center'> <h3>You selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", and Technology change = "+ tc+". See the simulation results (population at risk of hunger, Production, and Yield) based on given assumptions, comparing to the baseline (SSP2-NoCC).</h3></p>";    
     console.log("output:"+output);
     if (cc === "MIRO")
       document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
@@ -66,7 +66,7 @@
 <tr width="100%">
 <td colspan="4">
 <div id="tableau" align="center">
-<p align="center"><h1>This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM (extreme case), Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield. </h1></p>   
+<p align="center"><h3>This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM, and Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield, comparing with the baseline (SSP2-NoCC). </h3></p>   
         
 <iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no"  width='100%' height='700' frameborder="0" scrolling="no"></iframe>
 </div>
