@@ -1,2 +1,91 @@
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.24/esri/css/esri.css">
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.24/dijit/themes/claro/claro.css">
+<style type="text/css" id="title-font">.sections h1, .sections h2, .sections h3, .sections h4, .sections h5, .sections h6 { font-family: 'open_sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;}</style>
+<style type="text/css" id="body-font">.sections { font-family: 'noto_serif', 'Georgia', 'Hoefler Text', 'Palatino', cursive;} 
+    p.section-layout-sequence  { font-size: 20px;     line-height: 150%;     text-align: center; }
+</style>
+    </head>    
+<body>
+    <script>
+                                         
+ function loadTableau() 
+    {
+    var cc = document.getElementById("cc").value;
+    var population = document.getElementById("population").value;
+    var gdp = document.getElementById("gdp").value;
+    var tc = document.getElementById("tc").value;
+    var output = "";
+    output += "<p class ='section-layout-sequence' align='center'> You selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", and Technology change = "+ tc+". See the simulation results (population at risk of hunger, Production, and Yield) based on given assumptions, comparing to the baseline (SSP2-NoCC).</p>";    
+    console.log("output:"+output);
+    if (cc === "MIRO")
+      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+    else if (cc === "IPSL")
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/IPSL?:embed=true&:showVizHome=no' width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+    else if (cc === "GFDL")
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/GFDL?:embed=true&:showVizHome=no'  width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+    else if (cc === "HGEM")
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+    else
+       document.getElementById("tableau").innerHTML =output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%'height='700' frameborder='0' scrolling='no'></iframe>";
+       
+    }
+</script>    
+<div class="sections">    
+<table width="100%" border="0" cellpadding="10">
+<tr >
+    <td width="25%">
+        <label> Population growth </label>
+        <select id="population" onchange="loadTableau()" >
+            <option>Shared Social economic Pathway (SSP2) </option>
+        </select>
+    </td>    
+    <td width="25%">
+         <label> GDP </label>
+       <select id="gdp" onchange="loadTableau()" >
+        <option>Shared Social economic Pathway (SSP2) </option>
+        </select>
+    </td>    
+    <td width="25%">
+
+         <label> Climate change </label>
+        <select id="cc" onchange="loadTableau()" >
+        <option>MIRO</option>
+        <option>IPSL</option>
+        <option>GFDL</option>
+        <option selected="selected">HGEM</option>
+            
+        </select>
+    
+    </td>    
+    <td width="25%">
+         <label> Technology change </label>
+        <select id="tc" onchange="loadTableau()" ></option>
+
+        <option>Not available</option>
+        </select>
+    </td>    
+</tr>
+<tr width="100%">
+<td colspan="4">
+<div id="tableau" align="center">
+<p class ='section-layout-sequence' align="center">This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM, and Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield, comparing with the baseline (SSP2-NoCC). </p>   
+        
+<iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no"  width='100%' height='700' frameborder="0" scrolling="no"></iframe>
+</div>
+    </td>
+ 
+    
+    </tr>    
+</table>    
+
+
+    
+
+
+
+
+</div>
+</body>
 </html>
