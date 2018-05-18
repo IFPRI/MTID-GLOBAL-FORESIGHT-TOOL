@@ -141,12 +141,21 @@ td, th
 	<li id = "one"> <label> Population </label><select id="population" onchange="loadTableau()" >
             <option>Shared Social economic Pathway (SSP2) </option>
         </select> </li>
-    <li id = "two"> Menu Two </li>
-    <li id = "four"> Menu Four </li>
-    <li id = "three"> Menu Three </li>
+	<li id = "two"><label>GDP</label> <select id="gdp" onchange="loadTableau()" >
+        <option>Shared Social economic Pathway (SSP2) </option>
+        </select></li>
+	<li id = "three"> <label>Climate change</label><select id="cc" onchange="loadTableau()" >
+        <option>MIRO</option>
+        <option>IPSL</option>
+        <option>GFDL</option>
+        <option selected="selected">HGEM</option>
+        </select> </li>
+	<li id = "four"> <label>Technology change</label><select id="tc" onchange="loadTableau()" >
+		<option>Not available</option></select> </li>
+
 </ul>
 	
-	
+<!--	
 <table id="responsive-table">
 				<thead>
 					<tr>
@@ -172,14 +181,14 @@ td, th
         <option selected="selected">HGEM</option>
             
         </select></td>
-						<td><select id="tc" onchange="loadTableau()" ></option>
+						<td><select id="tc" onchange="loadTableau()" ><option>
 
-        <option>Not available</option></td>
+							<option>Not available</option></select></td>
 					</tr>
 				</tbody>
 			</table>
     
-   
+   -->
 
 <div id="tableau" align="center">
 <p class ='section-layout-sequence' align="center">This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM, and Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield, comparing with the baseline (SSP2-NoCC). </p>   
