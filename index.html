@@ -4,8 +4,61 @@
 <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.24/dijit/themes/claro/claro.css">
 <style type="text/css" id="title-font">.sections h1, .sections h2, .sections h3, .sections h4, .sections h5, .sections h6 { font-family: 'open_sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;}</style>
 <style type="text/css" id="body-font">.sections { font-family: 'noto_serif', 'Georgia', 'Hoefler Text', 'Palatino', cursive;} 
-    p.section-layout-sequence  { font-size: 20px;     line-height: 150%;     text-align: center; }
+    p.section-layout-sequence  { font-size: 12px;     line-height: 150%;     text-align: center; }
+
+        
+@media screen and (min-width: 320px) and (max-width: 700px) 
+  {
+  .sections 
+    {
+    width: 100%;
+    height: 800px;
+    }
+    ul {list-style-type:none; }
+    ul li   
+      {
+      padding:10px;
+      }
+    }	  
+@media screen and (min-width: 700px) and (max-width: 1280px) 
+  {
+  .sections 
+    {
+    width: 100%;
+    height: 800px;
+    }
+   ul {display: inline;}
+   ul li {
+    float:left;
+    width:25%;
+    display: inline;
+    }
+  }    
+
+@media screen and (min-width: 1281px) and (max-width: 4000px) 
+  {
+  .sections 
+    {
+    width: 100%;
+    height: 800px;
+    }
+   ul {display: inline;}
+   ul li {
+    float:left;
+    width:25%;
+    display: inline;
+    }
+  }    
+
+	/*responsive list*/
+
+
+
+
+	
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">   
+<meta name="viewport" content="width=device-width, initial-scale=1">
     </head>    
 <body>
     <script>
@@ -16,71 +69,89 @@
     var population = document.getElementById("population").value;
     var gdp = document.getElementById("gdp").value;
     var tc = document.getElementById("tc").value;
+    
     var output = "";
     output += "<p class ='section-layout-sequence' align='center'> You selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", and Technology change = "+ tc+". See the simulation results (population at risk of hunger, Production, and Yield) based on given assumptions, comparing to the baseline (SSP2-NoCC).</p>";    
     console.log("output:"+output);
+   
+     
+
     if (cc === "MIRO")
-      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else if (cc === "IPSL")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/IPSL?:embed=true&:showVizHome=no' width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/IPSL?:embed=true&:showVizHome=no'  width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else if (cc === "GFDL")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/GFDL?:embed=true&:showVizHome=no'  width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/GFDL?:embed=true&:showVizHome=no'   width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else if (cc === "HGEM")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%' height='700' frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'   width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else
-       document.getElementById("tableau").innerHTML =output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%'height='700' frameborder='0' scrolling='no'></iframe>";
+       document.getElementById("tableau").innerHTML =output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%' height ='100%'  frameborder='0' scrolling='no' id='iframe'></iframe>";
        
     }
+        
+
+        
 </script>    
 <div class="sections">    
-<table width="100%" border="0" cellpadding="10">
-<tr >
-    <td width="25%">
-        <label> Population growth </label>
-        <select id="population" onchange="loadTableau()" >
+<ul>
+	<li id = "one"> <label> Population </label><select id="population" onchange="loadTableau()" >
             <option>Shared Social economic Pathway (SSP2) </option>
-        </select>
-    </td>    
-    <td width="25%">
-         <label> GDP </label>
-       <select id="gdp" onchange="loadTableau()" >
+        </select> </li>
+	<li id = "two"><label>GDP</label> <select id="gdp" onchange="loadTableau()" >
         <option>Shared Social economic Pathway (SSP2) </option>
-        </select>
-    </td>    
-    <td width="25%">
+        </select></li>
+	<li id = "three"> <label>Climate change</label><select id="cc" onchange="loadTableau()" >
+        <option>MIRO</option>
+        <option>IPSL</option>
+        <option>GFDL</option>
+        <option selected="selected">HGEM</option>
+        </select> </li>
+	<li id = "four"> <label>Technology change</label><select id="tc" onchange="loadTableau()" >
+		<option>Not available</option></select> </li>
 
-         <label> Climate change </label>
-        <select id="cc" onchange="loadTableau()" >
+</ul>
+	
+<!--	
+<table id="responsive-table">
+				<thead>
+					<tr>
+						<th>Population growth</th>
+						<th>GDP</th>
+						<th>Climate change</th>
+						<th>Technology change</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><select id="population" onchange="loadTableau()" >
+            <option>Shared Social economic Pathway (SSP2) </option>
+        </select></td>
+						<td><select id="gdp" onchange="loadTableau()" >
+        <option>Shared Social economic Pathway (SSP2) </option>
+        </select></td>
+						<td><select id="cc" onchange="loadTableau()" >
         <option>MIRO</option>
         <option>IPSL</option>
         <option>GFDL</option>
         <option selected="selected">HGEM</option>
             
-        </select>
-    
-    </td>    
-    <td width="25%">
-         <label> Technology change </label>
-        <select id="tc" onchange="loadTableau()" ></option>
+        </select></td>
+						<td><select id="tc" onchange="loadTableau()" ><option>
 
-        <option>Not available</option>
-        </select>
-    </td>    
-</tr>
-<tr width="100%">
-<td colspan="4">
+							<option>Not available</option></select></td>
+					</tr>
+				</tbody>
+			</table>
+    
+   -->
+
 <div id="tableau" align="center">
 <p class ='section-layout-sequence' align="center">This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM, and Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield, comparing with the baseline (SSP2-NoCC). </p>   
         
-<iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no"  width='100%' height='700' frameborder="0" scrolling="no"></iframe>
+<iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no" width='100%' height ='100%'  frameborder='0' scrolling='no' id='iframe' ></iframe>
+
 </div>
-    </td>
- 
-    
-    </tr>    
-</table>    
-
-
     
 
 
