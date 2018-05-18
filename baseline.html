@@ -8,15 +8,30 @@
    
 @media screen and (min-width: 320px) and (max-width: 640px) 
   {
-    .header-text {
-       background-color: blue;
+  .sections 
+    {
+    width: 375px;
+    height: 800px;
     }
   }
-    
-iframe 
+   
+@media screen and (min-width: 640px) and (max-width: 1280px) 
   {
-  width: 100%;
-  }
+  .sections 
+    {
+    width: 640px;
+    width: 800px;
+    }
+  }    
+
+@media screen and (min-width: 1281px) and (max-width: 2000px) 
+  {
+  .sections 
+    {
+    width: 1280px;
+    width: 800px;
+    }
+  }    
     
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">   
@@ -32,34 +47,7 @@ iframe
     var gdp = document.getElementById("gdp").value;
     var tc = document.getElementById("tc").value;
     
-       /* responsive  */    
-        
-    var the_iframe = document.getElementById('iframe');
-    var offsetWidth = the_iframe.offsetWidth;
-    var offsetHeight = the_iframe.offsetHeight;
-    
-    var the_section = document.getElementById('sections');
-    var offsetWidth_section = the_section.offsetWidth;
-    var offsetHeight_section = the_section.offsetHeight;
-        
-        
-    newHeight = '600px';
-    if (offsetWidth < 400) 
-      {
-      newHeight = '600px';
-          
-      } 
-    else if (offsetWidth < 1024) 
-      {
-      newHeight = '600px';
-       } 
-    else if (offsetWidth < 1280) 
-      {
-      newHeight = '600px';
-      }
-    the_iframe.style.height = newHeight;
-    console.log("newHeight:"+newHeight);
-        var output = "";
+    var output = "";
     output += "<p class ='section-layout-sequence' align='center'> You selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", and Technology change = "+ tc+". See the simulation results (population at risk of hunger, Production, and Yield) based on given assumptions, comparing to the baseline (SSP2-NoCC).</p>";    
     console.log("output:"+output);
    
