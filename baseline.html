@@ -34,70 +34,26 @@
     }
   }    
 
-	/*responsive table*/
-table 
-	{
-	border-collapse: collapse;
-    width: 100%;
-	}
-td, th 
-	{ 
-	padding: 2px;
-	}
+	/*responsive list*/
+ul {list-style-type:none;}
+ul li {
+    float:left;
+    width:100px;
+    background: gray;
+}
+ul #three {
+    float: none;
+}
+@media screen and (min-width:520px) {
+    ul #four {
+        margin-left: 100px;
+    }
+    ul #three {
+        float: left;
+        margin-left: -200px;
+    }
+}
 
-
-
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  
-	{
-     /* Section three*/
-    table, thead, tbody, th, td, tr 
-		{ 
-        display: block; 
-        }
-    /* Section four*/
-    thead tr 
-		{ 
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-        }
-                
- /* Section five*/
-    td 
-		{ 
-        border: none;
-        position: relative;
-        padding-left: 50%; 
-        }
-                
-	td:before 
-	    { 
-        position: absolute;
-        }
-    td:nth-of-type(1):before { content: "Population growth"; }
-    td:nth-of-type(2):before { content: "GDP"; }
-    td:nth-of-type(3):before { content: "Climate change"; }
-    td:nth-of-type(4):before { content: "Technology change"; }
-    
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) 
-    {
-    table 
-	    { 
-        padding: 0; 
-        margin: 0; 
-        width: 320px; 
-		}
-	}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) 
-    {
-    table 
-	    { 
-        width: 495px; 
-        }
-    }	
 	
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">   
