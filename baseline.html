@@ -72,42 +72,40 @@
         
 </script>    
 <div class="sections">    
-<table width="100%" border="0" cellpadding="10">
-<tr >
-    <td width="25%">
-        <label> Population growth </label>
-        <select id="population" onchange="loadTableau()" >
-            <option>Shared Social economic Pathway (SSP2) </option>
-        </select>
-    </td>    
-    <td width="25%">
-         <label> GDP </label>
-       <select id="gdp" onchange="loadTableau()" >
-        <option>Shared Social economic Pathway (SSP2) </option>
-        </select>
-    </td>    
-    <td width="25%">
 
-         <label> Climate change </label>
-        <select id="cc" onchange="loadTableau()" >
+<table id="responsive-table">
+				<thead>
+					<tr>
+						<th>Population growth</th>
+						<th>GDP</th>
+						<th>Climate change</th>
+						<th>Technology change</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><select id="population" onchange="loadTableau()" >
+            <option>Shared Social economic Pathway (SSP2) </option>
+        </select></td>
+						<td><select id="gdp" onchange="loadTableau()" >
+        <option>Shared Social economic Pathway (SSP2) </option>
+        </select></td>
+						<td><select id="cc" onchange="loadTableau()" >
         <option>MIRO</option>
         <option>IPSL</option>
         <option>GFDL</option>
         <option selected="selected">HGEM</option>
             
-        </select>
-    
-    </td>    
-    <td width="25%">
-         <label> Technology change </label>
-        <select id="tc" onchange="loadTableau()" ></option>
+        </select></td>
+						<td><select id="tc" onchange="loadTableau()" ></option>
 
-        <option>Not available</option>
-        </select>
-    </td>    
-</tr>
+        <option>Not available</option></td>
+					</tr>
+				</tbody>
+			</table>
+    
    
-</table>    
 
 <div id="tableau" align="center">
 <p class ='section-layout-sequence' align="center">This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM, and Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield, comparing with the baseline (SSP2-NoCC). </p>   
