@@ -6,7 +6,18 @@
 <style type="text/css" id="body-font">.sections { font-family: 'noto_serif', 'Georgia', 'Hoefler Text', 'Palatino', cursive;} 
     p.section-layout-sequence  { font-size: 20px;     line-height: 150%;     text-align: center; }
    
-   
+@media screen and (min-width: 320px) and (max-width: 640px) 
+  {
+    .header-text {
+       background-color: blue;
+    }
+  }
+    
+iframe 
+  {
+  width: 100%;
+  }
+    
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">   
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,21 +31,55 @@
     var population = document.getElementById("population").value;
     var gdp = document.getElementById("gdp").value;
     var tc = document.getElementById("tc").value;
-    var output = "";
+    
+       /* responsive  */    
+        
+    var the_iframe = document.getElementById('iframe'),
+    var offsetWidth = the_iframe.offsetWidth;
+    var offsetHeight = the_iframe.offsetHeight;
+    
+    var the_section = document.getElementById('sections'),
+    var offsetWidth_section = the_section.offsetWidth;
+    var offsetHeight_section = the_section.offsetHeight;
+        
+        
+    newHeight = '600px';
+    if (offsetWidth < 400) 
+      {
+      newHeight = '600px';
+          
+      } 
+    else if (offsetWidth < 1024) 
+      {
+      newHeight = '600px';
+       } 
+    else if (offsetWidth < 1280) 
+      {
+      newHeight = '600px';
+      }
+    the_iframe.style.height = newHeight;
+    
+        var output = "";
     output += "<p class ='section-layout-sequence' align='center'> You selected Population growth = "+ population+", GDP = "+gdp+", Climate change = "+ cc+ ", and Technology change = "+ tc+". See the simulation results (population at risk of hunger, Production, and Yield) based on given assumptions, comparing to the baseline (SSP2-NoCC).</p>";    
     console.log("output:"+output);
+   
+     
+
     if (cc === "MIRO")
-      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/MIRO?:embed=true&:showVizHome=no' width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else if (cc === "IPSL")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/IPSL?:embed=true&:showVizHome=no'  frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/IPSL?:embed=true&:showVizHome=no'  width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else if (cc === "GFDL")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/GFDL?:embed=true&:showVizHome=no'   frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/GFDL?:embed=true&:showVizHome=no'   width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else if (cc === "HGEM")
-      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'   frameborder='0' scrolling='no'></iframe>";
+      document.getElementById("tableau").innerHTML = output+"<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'   width='100%' height ='100%' frameborder='0' scrolling='no' id='iframe'></iframe>";
     else
-       document.getElementById("tableau").innerHTML =output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'   frameborder='0' scrolling='no'></iframe>";
+       document.getElementById("tableau").innerHTML =output+ "<iframe src='https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no'  width='100%' height ='100%'  frameborder='0' scrolling='no' id='iframe'></iframe>";
        
     }
+        
+
+        
 </script>    
 <div class="sections">    
 <table width="100%" border="0" cellpadding="10">
@@ -76,7 +121,8 @@
 <div id="tableau" align="center">
 <p class ='section-layout-sequence' align="center">This default simulation results were generated, based on the following assumptions: Population growth = Social conomic Pathway 2 (SSP2), GDP = Social conomic Pathway 2 (SSP2), Climate change = HGEM, and Technology change = N/A. See the simulation results including Population at risk of hunger, Production, and Yield, comparing with the baseline (SSP2-NoCC). </p>   
         
-<iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no" ></iframe>
+<iframe src="https://public.tableau.com/views/interactiveScenario/HGEM?:embed=true&:showVizHome=no" width='100%' height ='100%'  frameborder='0' scrolling='no' id='iframe' ></iframe>
+
 </div>
     </td>
  
